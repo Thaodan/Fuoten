@@ -64,7 +64,16 @@ if(${TARGETSYSTEM} STREQUAL "sfos")
     add_subdirectory(HBN_SFOS_Cmake)
     add_subdirectory(HBN_SFOS_Components)
     add_subdirectory(sailfishos)
-
+    # breaks building on obs
+    # [   47s] -- Configuring done (8.7s)
+# [   47s] CMake Error at CMakeLists.txt:68 (add_custom_target):
+# [   47s]   Cannot find source file:
+# [   47s]
+# [   47s]     rpm/harbour-fuoten.changes
+# [   47s]
+# [   47s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+# [   47s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+# [   47s]   .f95 .f03 .hip .ispc
     add_custom_target(specfiles
         SOURCES
             rpm/harbour-fuoten.changes
